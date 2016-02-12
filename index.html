@@ -21,15 +21,16 @@
         <nav>
             <ul>
                 <li>Aller à la section :</li>
-                <li><a href="#resume">Résumé</a></li>
+                <li><a href="#problematique">Problématique</a></li>
+                <li><a href="#resultats">Résultats</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#participants">Participants</a></li>
             </ul>
         </nav>
 
-        <section id="resume">
+        <section id="problematique">
 
-            <h2>Résumé</h2>
+            <h2>Problématique</h2>
 
             <p>
             Les mots-clés sont utilisés pour indexer et catégoriser les documents.
@@ -40,6 +41,49 @@
             L'ambition du projet GOLEM est de résoudre ce problème en proposant une approche originale empruntant des techniques issues du domaine de l'optimisation.
             Plus précisément, GOLEM vise le développement de méthodes capables de maximiser à la fois la pertinence des mot-clés extraits et les relations sémantiques qui les relie.
             </p>
+
+        </section>
+
+        <section id="resultats">
+
+            <h2>Résultats</h2>
+
+            <h3>Modélisation de la problématique d'extraction de mots-clés en PLNE</h3>
+
+            <p>
+            Nous nous sommes tout d’abord penché sur la modélisation de la problématique d’extraction de mots-clés en un problème de Programmation Linéaire en Nombres Entiers (PLNE). Pour cela, nous avons suivi les travaux de <a href="http://www.aclweb.org/anthology/W09-1802">(Gillick et Favre, 2009)</a> sur le résumé automatique et avons proposé un modèle similaire fondé sur un problème de PLNE de type couverture maximale. L’originalité de notre modèle est d’utiliser une pondération à l’échelle des mots du document pour ensuite rechercher le sous-ensemble optimal de mots-clés (termes) couvrant le plus grand nombre de mots importants. De cette façon, la redondance dans l’ensemble de mots-clés extraits est gérée de manière implicite par le modèle qui ne bénéficie de l’inclusion de chaque mot qu’une seule fois. L’évaluation de notre modèle a été réalisée sur l’ensemble de données SemEval 2010, composés d’articles scientifiques issus de la bibliothèque numérique de l’ACM.
+            </p>
+
+            <ul>
+                <li>Pour plus d'information, voir <a href="http://www.aclweb.org/anthology/W/W15/W15-3605.pdf">(Boudin, 2015)</a></li>
+            </ul>
+
+            <h3>Problématique des multiples solutions optimales</h3>
+
+            <p>
+            En parallèle de l’adaptation du modèle de PLNE à l’extraction de mots-clés, l’étude approfondie des travaux de <a href="http://www.aclweb.org/anthology/W09-1802">(Gillick et Favre, 2009)</a> a fait émerger une problématique jusqu’à présent non traitée, celle des multiples solutions optimales. Le problème de couverture maximale est NP-complet, et il est ainsi obligatoire de simplifier la formulation du problème pour que les solvers existants puissent le résoudre en un temps raisonnable. Dans la littérature, cette simplification passe par la réduction du nombre d’éléments utilisés pour pondérer les ensembles. Malheureusement, cette réduction, couplée à des méthodes de pondération grossières, a pour effet de provoquer l’apparition de solutions optimales équivalentes.
+            </p>
+
+            <ul>
+                <li>Pour plus d'information, voir <a href="http://www.aclweb.org/anthology/D/D15/D15-1220.pdf">(Boudin et al., 2015)</a></li>
+            </ul>
+
+            <h3>Sélection des mots-clés candidats</h3>
+
+            <p>
+            Nous avons ensuite porté notre attention sur l’étape de sélection des mots-clés candidats. La sélection des candidats (c.-à-d. les unités textuelles susceptibles d’être des mots-clés) est une étape très importante puisqu’elle définit à la fois la performance maximale (rappel) et la complexité (nombre de candidats à traiter) des modèles d’extraction de mots-clés subséquents. Contrairement aux méthodes classiquement utilisées pour sélectionner les candidats fondées sur des critères surfaciques (p. ex. séquences d’étiquettes grammaticales), nous avons fait le choix de recourir à des critères motivés linguistiquement (détection et filtrage des adjectifs dénominaux dans les groupes nominaux).
+            </p>
+
+            <h3>Construction d'un ensemble de données d'évaluation pour le français</h3>
+
+            <p>
+            Une des problématiques à laquelle nous nous sommes confrontés au cours du projet GOLEM est l’absence de collections de test en français pour évaluer les méthodes d’extraction de mots-clés proposées. Nous avons répondu à ce problème en participant à l’initiative lancée par le projet <a href="http://www.atilf.fr/ressources/termith/">ANR TERMITH</a> pour la constitution d’un ensemble de données d’évaluation standardisé en français. Contrairement aux ensembles disponibles en anglais où les mots-clés de référence sont produits soit par les auteurs, soit par des lecteurs, nous avons fait appel à des indexeurs professionnels afin de garantir un niveau de qualité très élevé.
+            </p>
+
+            <ul>
+                <li>Pour plus d'information, voir <a href="#">(Bougouin et al., 2016)</a></li>
+            </ul>
+
 
         </section>
 
@@ -54,9 +98,15 @@
                 </li>
                 <li>
                     Florian Boudin, Hugo Mougard and Benoit Favre.
-                    Concept-based Summarization using Integer Linear Programming: From Concept Pruning to Multiple Optimal Solutions.
+                    <a href="http://www.aclweb.org/anthology/D/D15/D15-1220.pdf">Concept-based Summarization using Integer Linear Programming: From Concept Pruning to Multiple Optimal Solutions</a>.
                     <i><a href="http://www.emnlp2015.org/">Proceedings of the Conference on Empirical Methods in Natural Language Processing (EMNLP)</a></i>.
                     Lisbon, Portugal. 2015.
+                </li>
+                <li>
+                    Adrien Bougouin, Sabine Barreaux, Laurent Romary, Florian Boudin and Béatrice Daille.
+                    TermITH-Eval: a French Standard-Based Resource for Keyphrase Extraction Evaluation.
+                    <i><a href="http://lrec2016.lrec-conf.org">Proceedings of the Language Resources and Evaluation Conference (LREC)</a></i>.
+                    Portorož, Slovenia. 2016.
                 </li>
             </ul>
         </section>

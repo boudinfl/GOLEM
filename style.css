@@ -19,7 +19,8 @@ h2 {
 }
 
 h3 {
-    font-size: 105%;
+    font-size: 12pt;
+    margin: 8px 0px;
 }
 
 #golem {
@@ -37,12 +38,14 @@ td {
 
 p {
     text-align: justify;
+    margin-bottom: 5px;
 }
 
 ul li {
     margin-left: 20px;
     /*list-style-position: inside;*/
     list-style-type: square;
+    margin-bottom: 5px;
 }
 
 nav li {
